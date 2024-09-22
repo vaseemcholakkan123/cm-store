@@ -1,0 +1,3120 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://CM Travel Point-reactjs.ibthemespro.com/about -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com/"
+      crossorigin="true"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://CM Travel Point-reactjs.ibthemespro.com/favicon.ico"
+    />
+    <link
+      href="./assets/css2"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="https://CM Travel Point-reactjs.ibthemespro.com/favicon.ico"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About || CM Travel Point - Travel &amp; Tour ReactJs Template</title>
+    <script
+      type="module"
+      crossorigin=""
+      src="./assets/index-500181fe.js.download"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="./assets/index-62ad0444.css"
+    />
+    <style type="text/css">
+        .teams{
+            gap:1rem;
+        }
+        .teams .item_gap-x30{
+            width:50%;
+        }
+        .teams img{
+
+            height:400px;
+            object-fit: contain;
+            border-radius:12px;
+        }
+
+      .rmdp-wrapper {
+        background-color: #fff;
+        border-radius: 5px;
+        direction: ltr;
+        text-align: center;
+        width: max-content;
+      }
+      .rmdp-shadow {
+        box-shadow: 0 0 5px #8798ad;
+      }
+      .rmdp-border {
+        border: 1px solid #cfd8e2;
+      }
+      .rmdp-calendar {
+        height: max-content;
+        padding: 4px;
+      }
+      .rmdp-border-top {
+        border-top: 1px solid #cfd8e2;
+      }
+      .rmdp-border-bottom {
+        border-bottom: 1px solid #cfd8e2;
+      }
+      .rmdp-border-left {
+        border-left: 1px solid #cfd8e2;
+      }
+      .rmdp-border-right {
+        border-right: 1px solid #cfd8e2;
+      }
+      .rmdp-week,
+      .rmdp-ym {
+        display: flex;
+        justify-content: space-between;
+      }
+      .rmdp-ym {
+        height: 25%;
+      }
+      .rmdp-day,
+      .rmdp-week-day {
+        color: #000;
+        cursor: pointer;
+        height: 34px;
+        position: relative;
+        width: 34px;
+      }
+      .rmdp-week-day {
+        color: #0074d9;
+        cursor: default;
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .rmdp-day span,
+      .rmdp-week-day {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .rmdp-day span {
+        border-radius: 50%;
+        bottom: 3px;
+        font-size: 14px;
+        left: 3px;
+        position: absolute;
+        right: 3px;
+        top: 3px;
+      }
+      .rmdp-day.rmdp-today span {
+        background-color: #7fdbff;
+        color: #fff;
+      }
+      .rmdp-day.rmdp-selected span:not(.highlight) {
+        background-color: #0074d9;
+        box-shadow: 0 0 3px #8798ad;
+        color: #fff;
+      }
+      .rmdp-day.rmdp-deactive,
+      .rmdp-day.rmdp-disabled {
+        color: #8798ad;
+      }
+      .rmdp-day.rmdp-deactive.rmdp-selected span {
+        background-color: #4ca6f5;
+        box-shadow: 0 0 3px #bac5d3;
+      }
+      .rmdp-ym .rmdp-day {
+        flex: 1;
+        margin: auto;
+      }
+      .rmdp-ym .rmdp-day span {
+        border-radius: 12px;
+        padding: 2px 0;
+      }
+      .rmdp-range {
+        background-color: #0074d9;
+        box-shadow: 0 0 3px #8798ad;
+        color: #fff;
+      }
+      .rmdp-range-hover {
+        background-color: #7ea6f0;
+        color: #fff;
+      }
+      .rmdp-range-hover.start:not(.force),
+      .rmdp-range.start:not(.force) {
+        border-bottom-left-radius: 50%;
+        border-top-left-radius: 50%;
+      }
+      .rmdp-range-hover.end:not(.force),
+      .rmdp-range.end:not(.force) {
+        border-bottom-right-radius: 50%;
+        border-top-right-radius: 50%;
+      }
+      .rmdp-ym .rmdp-range-hover.start:not(.force),
+      .rmdp-ym .rmdp-range.start:not(.force) {
+        border-bottom-left-radius: 15px;
+        border-top-left-radius: 15px;
+      }
+      .rmdp-ym .rmdp-range-hover.end:not(.force),
+      .rmdp-ym .rmdp-range.end:not(.force) {
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+      .rmdp-day:not(.rmdp-disabled, .rmdp-day-hidden, .rmdp-selected)
+        span:hover {
+        background-color: #7ea6f0;
+        color: #fff;
+      }
+      .rmdp-day-picker {
+        padding: 5px;
+      }
+      .rmdp-header {
+        font-size: 14px;
+        margin-top: 5px;
+        padding: 9px 0;
+      }
+      .rmdp-month-picker,
+      .rmdp-year-picker {
+        background-color: #fff;
+        border-radius: 0 0 5px 5px;
+        bottom: 2px;
+        left: 2px;
+        position: absolute;
+        right: 2px;
+        top: 2px;
+      }
+      .only.rmdp-month-picker,
+      .only.rmdp-year-picker {
+        height: 240px;
+        position: static;
+        width: 240px;
+      }
+      .rmdp-header-values {
+        color: #000;
+        margin: auto;
+      }
+      .rmdp-header-values span {
+        padding: 0 0 0 5px;
+      }
+      .rmdp-arrow {
+        border: solid #0074d9;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        height: 3px;
+        margin-top: 5px;
+        padding: 2px;
+        width: 3px;
+      }
+      .rmdp-right i {
+        margin-right: 3px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+      .rmdp-left i {
+        margin-left: 3px;
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+      }
+      .rmdp-left {
+        left: 0;
+      }
+      .rmdp-right {
+        right: 0;
+      }
+      .rmdp-arrow-container {
+        background: transparent;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        height: 20px;
+        justify-content: center;
+        margin: 0 5px;
+        padding: 0;
+        width: 20px;
+      }
+      .rmdp-arrow-container:hover {
+        background-color: #0074d9;
+        box-shadow: 0 0 3px #8798ad;
+      }
+      .rmdp-arrow-container:hover .rmdp-arrow {
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+      }
+      .rmdp-arrow-container.disabled {
+        cursor: default;
+      }
+      .rmdp-arrow-container.disabled:hover {
+        background-color: inherit;
+        box-shadow: inherit;
+      }
+      .rmdp-arrow-container.disabled .rmdp-arrow,
+      .rmdp-arrow-container.disabled:hover .rmdp-arrow {
+        border: solid gray;
+        border-width: 0 2px 2px 0;
+      }
+      .rmdp-rtl {
+        direction: rtl;
+      }
+      .rmdp-rtl .rmdp-left i {
+        margin-left: 0;
+        margin-right: 3px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+      .rmdp-rtl .rmdp-right i {
+        margin-left: 3px;
+        margin-right: 0;
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+      }
+      .rmdp-rtl .rmdp-right {
+        left: 0;
+        right: auto;
+      }
+      .rmdp-rtl .rmdp-left {
+        left: auto;
+        right: 0;
+      }
+      .rmdp-rtl .rmdp-range-hover.start:not(.force),
+      .rmdp-rtl .rmdp-range.start:not(.force) {
+        border-bottom-left-radius: unset;
+        border-bottom-right-radius: 50%;
+        border-top-left-radius: unset;
+        border-top-right-radius: 50%;
+      }
+      .rmdp-rtl .rmdp-range-hover.end:not(.force),
+      .rmdp-rtl .rmdp-range.end:not(.force) {
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: unset;
+        border-top-left-radius: 50%;
+        border-top-right-radius: unset;
+      }
+      .rmdp-rtl .rmdp-range.start.end:not(.force) {
+        border-radius: 50%;
+      }
+      .rmdp-rtl .rmdp-ym .rmdp-range-hover.start:not(.force),
+      .rmdp-rtl .rmdp-ym .rmdp-range.start:not(.force) {
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+      .rmdp-rtl .rmdp-ym .rmdp-range-hover.end:not(.force),
+      .rmdp-rtl .rmdp-ym .rmdp-range.end:not(.force) {
+        border-bottom-left-radius: 15px;
+        border-top-left-radius: 15px;
+      }
+      .rmdp-day-hidden,
+      .rmdp-day.rmdp-disabled {
+        cursor: default;
+      }
+      .rmdp-selected .highlight {
+        box-shadow: 0 0 3px #8798ad;
+      }
+      .rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden) .highlight-red:hover {
+        background-color: #ff6687;
+      }
+      .rmdp-day:not(.rmdp-deactive) .highlight-red {
+        color: #cc0303;
+      }
+      .rmdp-day.rmdp-deactive .highlight-red {
+        color: #e08e8e;
+      }
+      .rmdp-day.rmdp-selected .highlight-red {
+        background-color: #ea0034;
+        color: #fff;
+      }
+      .rmdp-day.rmdp-deactive.rmdp-selected .highlight-red {
+        background-color: #e4b0ba;
+        color: #fff;
+      }
+      .rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden)
+        .highlight-green:hover {
+        background-color: #4db6ac;
+      }
+      .rmdp-day:not(.rmdp-deactive) .highlight-green {
+        color: #00796b;
+      }
+      .rmdp-day.rmdp-deactive .highlight-green {
+        color: #7ab3ac;
+      }
+      .rmdp-day.rmdp-selected .highlight-green {
+        background-color: #009688;
+        color: #fff;
+      }
+      .rmdp-day.rmdp-deactive.rmdp-selected .highlight-green {
+        background-color: #749c98;
+        color: #fff;
+      }
+      .rmdp-day-hidden,
+      .rmdp-day-hidden:hover span {
+        background-color: unset;
+        color: transparent;
+      }
+      .rmdp-month-name {
+        cursor: default;
+        font-size: 14px;
+        margin: 3px 0;
+      }
+      .rmdp-full-year {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      @media (max-height: 450px), (max-width: 450px) {
+        .rmdp-day,
+        .rmdp-week-day {
+          height: 28px;
+          width: 28px;
+        }
+        .rmdp-day span {
+          font-size: 12px;
+          padding-left: 0.5px;
+        }
+        .only.rmdp-month-picker,
+        .only.rmdp-year-picker {
+          height: 200px;
+          width: 230px;
+        }
+        .rmdp-header {
+          padding: 3px 0 0;
+        }
+        .rmdp-header,
+        .rmdp-month-name {
+          font-size: 12px;
+        }
+        .rmdp-full-year {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+    <style type="text/css">
+      .rmdp-visible {
+        visibility: visible;
+      }
+      .rmdp-invisible {
+        visibility: hidden;
+      }
+      .rmdp-input {
+        border: 1px solid #c0c4d6;
+        border-radius: 5px;
+        height: 22px;
+        margin: 1px 0;
+        padding: 2px 5px;
+      }
+      .rmdp-input:focus {
+        border: 1px solid #a4b3c5;
+        box-shadow: 0 0 2px #a4b3c5;
+        outline: none !important;
+      }
+      .rmdp-button {
+        background-color: #0074d9;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        padding: 7px 16px;
+        text-align: center;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      .rmdp-button:hover {
+        background-color: #143ac5;
+        transition: 0.4s;
+      }
+      .rmdp-button:disabled {
+        background-color: #8798ad;
+      }
+      .rmdp-action-button {
+        border-radius: unset;
+        color: #2682d3;
+        float: right;
+        font-weight: 700;
+        margin: 15px 10px 15px 0;
+      }
+      .rmdp-action-button,
+      .rmdp-action-button:hover {
+        background-color: transparent;
+      }
+      .rmdp-ep-arrow {
+        overflow: hidden;
+        will-change: transform;
+      }
+      .rmdp-ep-arrow:after {
+        background-color: #fff;
+        content: "";
+        height: 12px;
+        position: absolute;
+        transform: rotate(45deg);
+        width: 12px;
+      }
+      .rmdp-ep-shadow:after {
+        box-shadow: 0 0 6px #8798ad;
+      }
+      .rmdp-ep-border:after {
+        border: 1px solid #cfd8e2;
+      }
+      .rmdp-ep-arrow[direction="top"] {
+        border-bottom: 1px solid #fff;
+      }
+      .rmdp-ep-arrow[direction="left"] {
+        border-right: 1px solid #fff;
+      }
+      .rmdp-ep-arrow[direction="right"] {
+        border-left: 1px solid #fff;
+        margin-left: -1px;
+      }
+      .rmdp-ep-arrow[direction="bottom"] {
+        border-top: 1px solid #fff;
+        margin-top: -1.5px;
+      }
+      .rmdp-ep-arrow[direction="top"]:after {
+        left: 4px;
+        top: 5px;
+      }
+      .rmdp-ep-arrow[direction="bottom"]:after {
+        left: 4px;
+        top: -6px;
+      }
+      .rmdp-ep-arrow[direction="left"]:after {
+        left: 5px;
+        top: 3px;
+      }
+      .rmdp-ep-arrow[direction="right"]:after {
+        left: -6px;
+        top: 3px;
+      }
+    </style>
+    <style data-emotion="css" data-s=""></style>
+    <meta
+      name="description"
+      content="CM Travel Point - Travel &amp; Tour ReactJs Template"
+      data-rh="true"
+    />
+  </head>
+
+  <body data-aos-easing="ease" data-aos-duration="1200" data-aos-delay="0">
+    <div id="root">
+      <main>
+        <div class="header-margin"></div>
+        <header class="header -type-5 -header-5-sticky">
+          <div class="header__container container">
+            <div class="row justify-between items-center">
+              <div class="col-auto mobile-col">
+                <div class="d-flex items-center">
+                  <div class="mr-20 d-flex items-center">
+                    <div class="mr-15 d-none md:d-flex">
+                      <a
+                        class="icon-user text-inherit text-22"
+                        href="/login"
+                      ></a>
+                    </div>
+                    <!-- <button
+                      class="d-flex items-center icon-menu text-dark-1 text-20"
+                      data-bs-toggle="offcanvas"
+                      aria-controls="mobile-sidebar_menu"
+                      data-bs-target="#mobile-sidebar_menu"
+                    ></button> -->
+                    <div
+                      class="offcanvas offcanvas-start mobile_menu-contnet"
+                      tabindex="-1"
+                      id="mobile-sidebar_menu"
+                      aria-labelledby="offcanvasMenuLabel"
+                      data-bs-scroll="true"
+                    >
+                      <div
+                        class="pro-header d-flex align-items-center justify-between border-bottom-light"
+                      >
+                        <a href="/"
+                          ><img
+                            src="./assets/logo-cm.png"
+                            alt="brand"
+                        /></a>
+                        <div
+                          class="fix-icon"
+                          data-bs-dismiss="offcanvas"
+                          aria-label="Close"
+                        >
+                          <i class="icon icon-close"></i>
+                        </div>
+                      </div>
+                      <aside
+                        data-testid="ps-sidebar-root-test-id"
+                        width="400"
+                        class="ps-sidebar-root css-dj2xbs"
+                      >
+                        <div
+                          data-testid="ps-sidebar-container-test-id"
+                          class="ps-sidebar-container css-1mb249p"
+                        >
+                          <nav class="ps-menu-root css-vj11vy">
+                            <ul class="css-ewdv3l">
+                              <li
+                                class="ps-menuitem-root ps-submenu-root menu-active-link css-16jesut"
+                              >
+                                <a
+                                  class="ps-menu-button"
+                                  data-testid="ps-menu-button-test-id"
+                                  tabindex="0"
+                                  ><span class="ps-menu-label css-12w9als"
+                                    >Home</span
+                                  ><span
+                                    class="ps-submenu-expand-icon css-1cuxlhl"
+                                    ><span class="css-honxw6"></span></span
+                                ></a>
+                                <div
+                                  data-testid="ps-submenu-content-test-id"
+                                  class="ps-submenu-content css-z5rm24"
+                                >
+                                  <ul class="css-ewdv3l">
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Home 01</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Home 02</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Home 03</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Home 04</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root menu-active-link css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Home 05</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Home 06</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Home 07</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Home 08</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Home 09</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Home 10</span
+                                        ></a
+                                      >
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li
+                                class="ps-menuitem-root ps-submenu-root css-16jesut"
+                              >
+                                <a
+                                  class="ps-menu-button"
+                                  data-testid="ps-menu-button-test-id"
+                                  tabindex="0"
+                                  ><span class="ps-menu-label css-12w9als"
+                                    >Categories</span
+                                  ><span
+                                    class="ps-submenu-expand-icon css-1cuxlhl"
+                                    ><span class="css-honxw6"></span></span
+                                ></a>
+                                <div
+                                  data-testid="ps-submenu-content-test-id"
+                                  class="ps-submenu-content css-z5rm24"
+                                >
+                                  <ul class="css-ewdv3l">
+                                    <li
+                                      class="ps-menuitem-root ps-submenu-root inactive-menu css-1ffbfs"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Hotel</span
+                                        ><span
+                                          class="ps-submenu-expand-icon css-1cuxlhl"
+                                          ><span
+                                            class="css-honxw6"
+                                          ></span></span
+                                      ></a>
+                                      <div
+                                        data-testid="ps-submenu-content-test-id"
+                                        class="ps-submenu-content css-z5rm24"
+                                      >
+                                        <ul class="css-ewdv3l">
+                                          <li
+                                            class="ps-menuitem-root ps-submenu-root inactive-menu css-11xthqp"
+                                          >
+                                            <a
+                                              class="ps-menu-button"
+                                              data-testid="ps-menu-button-test-id"
+                                              tabindex="0"
+                                              ><span
+                                                class="ps-menu-label css-12w9als"
+                                                >Hotel List</span
+                                              ><span
+                                                class="ps-submenu-expand-icon css-1cuxlhl"
+                                                ><span
+                                                  class="css-honxw6"
+                                                ></span></span
+                                            ></a>
+                                            <div
+                                              data-testid="ps-submenu-content-test-id"
+                                              class="ps-submenu-content css-z5rm24"
+                                            >
+                                              <ul class="css-ewdv3l">
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Hotel List v1</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Hotel List v2</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Hotel List v3</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Hotel List v4</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Hotel List v5</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </li>
+                                          <li
+                                            class="ps-menuitem-root ps-submenu-root inactive-menu css-11xthqp"
+                                          >
+                                            <a
+                                              class="ps-menu-button"
+                                              data-testid="ps-menu-button-test-id"
+                                              tabindex="0"
+                                              ><span
+                                                class="ps-menu-label css-12w9als"
+                                                >Hotel Single</span
+                                              ><span
+                                                class="ps-submenu-expand-icon css-1cuxlhl"
+                                                ><span
+                                                  class="css-honxw6"
+                                                ></span></span
+                                            ></a>
+                                            <div
+                                              data-testid="ps-submenu-content-test-id"
+                                              class="ps-submenu-content css-z5rm24"
+                                            >
+                                              <ul class="css-ewdv3l">
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Hotel Single v1</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Hotel Single v2</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </li>
+                                          <li
+                                            class="ps-menuitem-root ps-submenu-root inactive-menu css-11xthqp"
+                                          >
+                                            <a
+                                              class="ps-menu-button"
+                                              data-testid="ps-menu-button-test-id"
+                                              tabindex="0"
+                                              ><span
+                                                class="ps-menu-label css-12w9als"
+                                                >Hotel Booking</span
+                                              ><span
+                                                class="ps-submenu-expand-icon css-1cuxlhl"
+                                                ><span
+                                                  class="css-honxw6"
+                                                ></span></span
+                                            ></a>
+                                            <div
+                                              data-testid="ps-submenu-content-test-id"
+                                              class="ps-submenu-content css-z5rm24"
+                                            >
+                                              <ul class="css-ewdv3l">
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Booking Page</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root ps-submenu-root inactive-menu css-1ffbfs"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Tour</span
+                                        ><span
+                                          class="ps-submenu-expand-icon css-1cuxlhl"
+                                          ><span
+                                            class="css-honxw6"
+                                          ></span></span
+                                      ></a>
+                                      <div
+                                        data-testid="ps-submenu-content-test-id"
+                                        class="ps-submenu-content css-z5rm24"
+                                      >
+                                        <ul class="css-ewdv3l">
+                                          <li
+                                            class="ps-menuitem-root ps-submenu-root inactive-menu css-11xthqp"
+                                          >
+                                            <a
+                                              class="ps-menu-button"
+                                              data-testid="ps-menu-button-test-id"
+                                              tabindex="0"
+                                              ><span
+                                                class="ps-menu-label css-12w9als"
+                                                >Tour List</span
+                                              ><span
+                                                class="ps-submenu-expand-icon css-1cuxlhl"
+                                                ><span
+                                                  class="css-honxw6"
+                                                ></span></span
+                                            ></a>
+                                            <div
+                                              data-testid="ps-submenu-content-test-id"
+                                              class="ps-submenu-content css-z5rm24"
+                                            >
+                                              <ul class="css-ewdv3l">
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Tour List v1</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Tour List v2</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </li>
+                                          <li
+                                            class="ps-menuitem-root ps-submenu-root inactive-menu css-11xthqp"
+                                          >
+                                            <a
+                                              class="ps-menu-button"
+                                              data-testid="ps-menu-button-test-id"
+                                              tabindex="0"
+                                              ><span
+                                                class="ps-menu-label css-12w9als"
+                                                >Tour Pages</span
+                                              ><span
+                                                class="ps-submenu-expand-icon css-1cuxlhl"
+                                                ><span
+                                                  class="css-honxw6"
+                                                ></span></span
+                                            ></a>
+                                            <div
+                                              data-testid="ps-submenu-content-test-id"
+                                              class="ps-submenu-content css-z5rm24"
+                                            >
+                                              <ul class="css-ewdv3l">
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Tour Map</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Tour Single</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root ps-submenu-root inactive-menu css-1ffbfs"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Activity</span
+                                        ><span
+                                          class="ps-submenu-expand-icon css-1cuxlhl"
+                                          ><span
+                                            class="css-honxw6"
+                                          ></span></span
+                                      ></a>
+                                      <div
+                                        data-testid="ps-submenu-content-test-id"
+                                        class="ps-submenu-content css-z5rm24"
+                                      >
+                                        <ul class="css-ewdv3l">
+                                          <li
+                                            class="ps-menuitem-root ps-submenu-root inactive-menu css-11xthqp"
+                                          >
+                                            <a
+                                              class="ps-menu-button"
+                                              data-testid="ps-menu-button-test-id"
+                                              tabindex="0"
+                                              ><span
+                                                class="ps-menu-label css-12w9als"
+                                                >Activity List</span
+                                              ><span
+                                                class="ps-submenu-expand-icon css-1cuxlhl"
+                                                ><span
+                                                  class="css-honxw6"
+                                                ></span></span
+                                            ></a>
+                                            <div
+                                              data-testid="ps-submenu-content-test-id"
+                                              class="ps-submenu-content css-z5rm24"
+                                            >
+                                              <ul class="css-ewdv3l">
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Activity List v1</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Activity List v2</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </li>
+                                          <li
+                                            class="ps-menuitem-root ps-submenu-root inactive-menu css-11xthqp"
+                                          >
+                                            <a
+                                              class="ps-menu-button"
+                                              data-testid="ps-menu-button-test-id"
+                                              tabindex="0"
+                                              ><span
+                                                class="ps-menu-label css-12w9als"
+                                                >Activity Pages</span
+                                              ><span
+                                                class="ps-submenu-expand-icon css-1cuxlhl"
+                                                ><span
+                                                  class="css-honxw6"
+                                                ></span></span
+                                            ></a>
+                                            <div
+                                              data-testid="ps-submenu-content-test-id"
+                                              class="ps-submenu-content css-z5rm24"
+                                            >
+                                              <ul class="css-ewdv3l">
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Activity Map</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Activity Single</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root ps-submenu-root inactive-menu css-1ffbfs"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Hotel Rentals</span
+                                        ><span
+                                          class="ps-submenu-expand-icon css-1cuxlhl"
+                                          ><span
+                                            class="css-honxw6"
+                                          ></span></span
+                                      ></a>
+                                      <div
+                                        data-testid="ps-submenu-content-test-id"
+                                        class="ps-submenu-content css-z5rm24"
+                                      >
+                                        <ul class="css-ewdv3l">
+                                          <li
+                                            class="ps-menuitem-root ps-submenu-root inactive-menu css-11xthqp"
+                                          >
+                                            <a
+                                              class="ps-menu-button"
+                                              data-testid="ps-menu-button-test-id"
+                                              tabindex="0"
+                                              ><span
+                                                class="ps-menu-label css-12w9als"
+                                                >Rental List</span
+                                              ><span
+                                                class="ps-submenu-expand-icon css-1cuxlhl"
+                                                ><span
+                                                  class="css-honxw6"
+                                                ></span></span
+                                            ></a>
+                                            <div
+                                              data-testid="ps-submenu-content-test-id"
+                                              class="ps-submenu-content css-z5rm24"
+                                            >
+                                              <ul class="css-ewdv3l">
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Rental List v1</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Rental List v2</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </li>
+                                          <li
+                                            class="ps-menuitem-root ps-submenu-root inactive-menu css-11xthqp"
+                                          >
+                                            <a
+                                              class="ps-menu-button"
+                                              data-testid="ps-menu-button-test-id"
+                                              tabindex="0"
+                                              ><span
+                                                class="ps-menu-label css-12w9als"
+                                                >Rental Pages</span
+                                              ><span
+                                                class="ps-submenu-expand-icon css-1cuxlhl"
+                                                ><span
+                                                  class="css-honxw6"
+                                                ></span></span
+                                            ></a>
+                                            <div
+                                              data-testid="ps-submenu-content-test-id"
+                                              class="ps-submenu-content css-z5rm24"
+                                            >
+                                              <ul class="css-ewdv3l">
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Rental Map</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Rental Single</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root ps-submenu-root inactive-menu css-1ffbfs"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Car</span
+                                        ><span
+                                          class="ps-submenu-expand-icon css-1cuxlhl"
+                                          ><span
+                                            class="css-honxw6"
+                                          ></span></span
+                                      ></a>
+                                      <div
+                                        data-testid="ps-submenu-content-test-id"
+                                        class="ps-submenu-content css-z5rm24"
+                                      >
+                                        <ul class="css-ewdv3l">
+                                          <li
+                                            class="ps-menuitem-root ps-submenu-root inactive-menu css-11xthqp"
+                                          >
+                                            <a
+                                              class="ps-menu-button"
+                                              data-testid="ps-menu-button-test-id"
+                                              tabindex="0"
+                                              ><span
+                                                class="ps-menu-label css-12w9als"
+                                                >Car List</span
+                                              ><span
+                                                class="ps-submenu-expand-icon css-1cuxlhl"
+                                                ><span
+                                                  class="css-honxw6"
+                                                ></span></span
+                                            ></a>
+                                            <div
+                                              data-testid="ps-submenu-content-test-id"
+                                              class="ps-submenu-content css-z5rm24"
+                                            >
+                                              <ul class="css-ewdv3l">
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Car List v1</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Car List v2</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </li>
+                                          <li
+                                            class="ps-menuitem-root ps-submenu-root inactive-menu css-11xthqp"
+                                          >
+                                            <a
+                                              class="ps-menu-button"
+                                              data-testid="ps-menu-button-test-id"
+                                              tabindex="0"
+                                              ><span
+                                                class="ps-menu-label css-12w9als"
+                                                >Car Pages</span
+                                              ><span
+                                                class="ps-submenu-expand-icon css-1cuxlhl"
+                                                ><span
+                                                  class="css-honxw6"
+                                                ></span></span
+                                            ></a>
+                                            <div
+                                              data-testid="ps-submenu-content-test-id"
+                                              class="ps-submenu-content css-z5rm24"
+                                            >
+                                              <ul class="css-ewdv3l">
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Car Map</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Car Single</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root ps-submenu-root inactive-menu css-1ffbfs"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Cruise</span
+                                        ><span
+                                          class="ps-submenu-expand-icon css-1cuxlhl"
+                                          ><span
+                                            class="css-honxw6"
+                                          ></span></span
+                                      ></a>
+                                      <div
+                                        data-testid="ps-submenu-content-test-id"
+                                        class="ps-submenu-content css-z5rm24"
+                                      >
+                                        <ul class="css-ewdv3l">
+                                          <li
+                                            class="ps-menuitem-root ps-submenu-root inactive-menu css-11xthqp"
+                                          >
+                                            <a
+                                              class="ps-menu-button"
+                                              data-testid="ps-menu-button-test-id"
+                                              tabindex="0"
+                                              ><span
+                                                class="ps-menu-label css-12w9als"
+                                                >Cruise List</span
+                                              ><span
+                                                class="ps-submenu-expand-icon css-1cuxlhl"
+                                                ><span
+                                                  class="css-honxw6"
+                                                ></span></span
+                                            ></a>
+                                            <div
+                                              data-testid="ps-submenu-content-test-id"
+                                              class="ps-submenu-content css-z5rm24"
+                                            >
+                                              <ul class="css-ewdv3l">
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Cruise List v1</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Cruise List v2</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </li>
+                                          <li
+                                            class="ps-menuitem-root ps-submenu-root inactive-menu css-11xthqp"
+                                          >
+                                            <a
+                                              class="ps-menu-button"
+                                              data-testid="ps-menu-button-test-id"
+                                              tabindex="0"
+                                              ><span
+                                                class="ps-menu-label css-12w9als"
+                                                >Cruise Pages</span
+                                              ><span
+                                                class="ps-submenu-expand-icon css-1cuxlhl"
+                                                ><span
+                                                  class="css-honxw6"
+                                                ></span></span
+                                            ></a>
+                                            <div
+                                              data-testid="ps-submenu-content-test-id"
+                                              class="ps-submenu-content css-z5rm24"
+                                            >
+                                              <ul class="css-ewdv3l">
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Cruise Map</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Cruise Single</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root ps-submenu-root inactive-menu css-1ffbfs"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Flights</span
+                                        ><span
+                                          class="ps-submenu-expand-icon css-1cuxlhl"
+                                          ><span
+                                            class="css-honxw6"
+                                          ></span></span
+                                      ></a>
+                                      <div
+                                        data-testid="ps-submenu-content-test-id"
+                                        class="ps-submenu-content css-z5rm24"
+                                      >
+                                        <ul class="css-ewdv3l">
+                                          <li
+                                            class="ps-menuitem-root ps-submenu-root inactive-menu css-11xthqp"
+                                          >
+                                            <a
+                                              class="ps-menu-button"
+                                              data-testid="ps-menu-button-test-id"
+                                              tabindex="0"
+                                              ><span
+                                                class="ps-menu-label css-12w9als"
+                                                >Flight List</span
+                                              ><span
+                                                class="ps-submenu-expand-icon css-1cuxlhl"
+                                                ><span
+                                                  class="css-honxw6"
+                                                ></span></span
+                                            ></a>
+                                            <div
+                                              data-testid="ps-submenu-content-test-id"
+                                              class="ps-submenu-content css-z5rm24"
+                                            >
+                                              <ul class="css-ewdv3l">
+                                                <li
+                                                  class="ps-menuitem-root inactive-menu css-qgt4cf"
+                                                >
+                                                  <a
+                                                    class="ps-menu-button"
+                                                    data-testid="ps-menu-button-test-id"
+                                                    tabindex="0"
+                                                    ><span
+                                                      class="ps-menu-label css-12w9als"
+                                                      >Flight List v1</span
+                                                    ></a
+                                                  >
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li class="ps-menuitem-root css-1t8x7v1">
+                                <a
+                                  class="ps-menu-button"
+                                  data-testid="ps-menu-button-test-id"
+                                  tabindex="0"
+                                  ><span class="ps-menu-label css-12w9als"
+                                    >Desitinations</span
+                                  ></a
+                                >
+                              </li>
+                              <li
+                                class="ps-menuitem-root ps-submenu-root css-16jesut"
+                              >
+                                <a
+                                  class="ps-menu-button"
+                                  data-testid="ps-menu-button-test-id"
+                                  tabindex="0"
+                                  ><span class="ps-menu-label css-12w9als"
+                                    >Blog</span
+                                  ><span
+                                    class="ps-submenu-expand-icon css-1cuxlhl"
+                                    ><span class="css-honxw6"></span></span
+                                ></a>
+                                <div
+                                  data-testid="ps-submenu-content-test-id"
+                                  class="ps-submenu-content css-z5rm24"
+                                >
+                                  <ul class="css-ewdv3l">
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Blog List V1</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Blog List V2</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Blog Single</span
+                                        ></a
+                                      >
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li
+                                class="ps-menuitem-root ps-submenu-root css-16jesut"
+                              >
+                                <a
+                                  class="ps-menu-button"
+                                  data-testid="ps-menu-button-test-id"
+                                  tabindex="0"
+                                  ><span class="ps-menu-label css-12w9als"
+                                    >Pages</span
+                                  ><span
+                                    class="ps-submenu-expand-icon css-1cuxlhl"
+                                    ><span class="css-honxw6"></span></span
+                                ></a>
+                                <div
+                                  data-testid="ps-submenu-content-test-id"
+                                  class="ps-submenu-content css-z5rm24"
+                                >
+                                  <ul class="css-ewdv3l">
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >404</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >About</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Become Expert</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Help Center</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Login</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Register</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Terms</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Invoice</span
+                                        ></a
+                                      >
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li
+                                class="ps-menuitem-root ps-submenu-root css-16jesut"
+                              >
+                                <a
+                                  class="ps-menu-button"
+                                  data-testid="ps-menu-button-test-id"
+                                  tabindex="0"
+                                  ><span class="ps-menu-label css-12w9als"
+                                    >Dashboard</span
+                                  ><span
+                                    class="ps-submenu-expand-icon css-1cuxlhl"
+                                    ><span class="css-honxw6"></span></span
+                                ></a>
+                                <div
+                                  data-testid="ps-submenu-content-test-id"
+                                  class="ps-submenu-content css-z5rm24"
+                                >
+                                  <ul class="css-ewdv3l">
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Dashboard</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Booking History</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Wishlist</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Settings</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Vendor Dashboard</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Vendor Add Hotel</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Vendor Booking</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Vendor Hotels</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Vendor Recovery</span
+                                        ></a
+                                      >
+                                    </li>
+                                    <li
+                                      class="ps-menuitem-root inactive-menu css-1tqrhto"
+                                    >
+                                      <a
+                                        class="ps-menu-button"
+                                        data-testid="ps-menu-button-test-id"
+                                        tabindex="0"
+                                        ><span class="ps-menu-label css-12w9als"
+                                          >Logout</span
+                                        ></a
+                                      >
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li class="ps-menuitem-root css-1t8x7v1">
+                                <a
+                                  class="ps-menu-button"
+                                  data-testid="ps-menu-button-test-id"
+                                  tabindex="0"
+                                  ><span class="ps-menu-label css-12w9als"
+                                    >Contact</span
+                                  ></a
+                                >
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
+                      </aside>
+                      <div
+                        class="mobile-footer px-20 py-5 border-top-light"
+                      ></div>
+                      <div class="pro-footer">
+                        <div class="mb-20">
+                          <div class="text-14">Toll Free Customer Care</div>
+                          <a
+                            href="tel:+(1) 123 456 7890"
+                            class="text-18 fw-500 text-dark-1 mt-5"
+                            >+(1) 123 456 7890</a
+                          >
+                        </div>
+                        <div class="mb-20">
+                          <div class="text-14">Need live support?</div>
+                          <a
+                            href="mailto:xyz@abc.com"
+                            class="text-18 fw-500 text-dark-1 mt-5"
+                            >hi@CM Travel Point.com</a
+                          >
+                        </div>
+                        <div class="mt-10">
+                          <h5 class="text-16 fw-500 mb-10">
+                            Follow us on social media
+                          </h5>
+                          <div class="d-flex x-gap-20 items-center">
+                            <a
+                              href="https://facebok.com/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              ><i class="icon-facebook text-14"></i></a
+                            ><a
+                              href="https://twitter.com/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              ><i class="icon-twitter text-14"></i></a
+                            ><a
+                              href="https://instagram.com/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              ><i class="icon-instagram text-14"></i></a
+                            ><a
+                              href="https://linkedin.com/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              ><i class="icon-linkedin text-14"></i
+                            ></a>
+                          </div>
+                        </div>
+                        <div class="mt-20">
+                          <a
+                            class="button -dark-1 px-30 fw-400 text-14 bg-blue-1 h-50 text-white"
+                            href="/login"
+                            >Become An Expert</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <a
+                    class="header-logo mr-20"
+                    href="/"
+                    ><img
+                      src="./assets/logo-cm.png"
+                      alt="logo icon" /><img
+                      src="./assets/logo-cm.png"
+                      alt="logo icon"
+                  /></a>
+                  <div class="header-menu">
+                    <div class="header-menu__content">
+                      <nav class="menu js-navList">
+                        <ul class="menu__nav text-dark-1 -is-active">
+                          <li class="current menu-item-has-children">
+                            <a
+                              href="./index.html"
+                              >Home</a
+                            >
+                          </li>
+                          <li class="current menu-item-has-children"></li>
+                            <a
+                              href="./about-us"
+                              >About</a
+                            >
+                          </li>
+<!--
+                          <li class="">
+                            <a
+                              href="/contact"
+                              >Contact</a
+                            >
+                          </li> -->
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div
+                  class="d-flex items-center ml-20 is-menu-opened-hide md:d-none"
+                >
+                  <div
+                    class="header__buttons d-flex items-center is-menu-opened-hide"
+                  >
+                    <a
+                      class="button h-50 px-30 fw-400 text-14 -blue-1 bg-white text-dark-1 sm:d-none"
+                      href="/login"
+                      >Contact us</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <section class="section-bg layout-pt-lg layout-pb-lg">
+          <div class="section-bg__item col-12">
+            <img
+              src="./assets/1.png"
+              alt="image"
+            />
+          </div>
+          <div class="container">
+            <div class="row justify-center text-center">
+              <div class="col-xl-6 col-lg-8 col-md-10">
+                <h1 class="text-40 md:text-25 fw-600 text-white">
+                  Looking for joy?
+                </h1>
+                <div class="text-white mt-15">Your trusted trip companion</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="layout-pt-lg layout-pb-md">
+          <div class="container">
+            <div class="row justify-center text-center">
+              <div class="col-auto">
+                <div class="sectionTitle -md">
+                  <h2 class="sectionTitle__title">Why Choose Us</h2>
+                  <p class="sectionTitle__text mt-5 sm:mt-0">
+                    These popular destinations have a lot to offer
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row y-gap-40 justify-between pt-50">
+              <div
+                class="col-lg-3 col-sm-6 aos-init aos-animate"
+                data-aos="fade"
+                data-aos-delay="100"
+              >
+                <div class="featureIcon -type-1">
+                  <div class="d-flex justify-center">
+                    <img
+                      src="./assets/1.svg"
+                      alt="image"
+                      class="js-lazy"
+                    />
+                  </div>
+                  <div class="text-center mt-30">
+                    <h4 class="text-18 fw-500">Best Price Guarantee</h4>
+                    <p class="text-15 mt-10">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-lg-3 col-sm-6 aos-init aos-animate"
+                data-aos="fade"
+                data-aos-delay="200"
+              >
+                <div class="featureIcon -type-1">
+                  <div class="d-flex justify-center">
+                    <img
+                      src="./assets/2.svg"
+                      alt="image"
+                      class="js-lazy"
+                    />
+                  </div>
+                  <div class="text-center mt-30">
+                    <h4 class="text-18 fw-500">Easy &amp; Quick Booking</h4>
+                    <p class="text-15 mt-10">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-lg-3 col-sm-6 aos-init aos-animate"
+                data-aos="fade"
+                data-aos-delay="300"
+              >
+                <div class="featureIcon -type-1">
+                  <div class="d-flex justify-center">
+                    <img
+                      src="./assets/3.svg"
+                      alt="image"
+                      class="js-lazy"
+                    />
+                  </div>
+                  <div class="text-center mt-30">
+                    <h4 class="text-18 fw-500">Customer Care 24/7</h4>
+                    <p class="text-15 mt-10">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="layout-pt-md">
+          <div class="container">
+            <div class="row y-gap-30 justify-between items-center">
+              <div class="col-lg-5">
+                <h2 class="text-30 fw-600">About CM Travel Point.com</h2>
+                <p class="mt-5">
+                  These popular destinations have a lot to offer
+                </p>
+                <p class="text-dark-1 mt-60 lg:mt-40 md:mt-20">
+                  London is a shining example of a metropolis at the highest
+                  peak of modernity and boasts an economy and cultural diversity
+                  that’s the envy of other global superpowers.<br /><br />Take
+                  the opportunity to acquaint yourself with its fascinating
+                  history chronicled by institutions like the British Museum as
+                  well as see how far it has come by simply riding the Tube and
+                  passing by celebrated landmarks like Buckingham Palace,
+                  Westminster Abbey, and marvels like Big Ben, the London Eye,
+                  and the Tower Bridge.
+                </p>
+              </div>
+              <div class="col-lg-6">
+                <img
+                  src="./assets/2.png"
+                  alt="image"
+                  class="rounded-4 w-100"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pt-60">
+          <div class="container">
+            <div class="border-bottom-light pb-40">
+              <div class="row y-gap-30 justify-center text-center">
+                <div
+                  class="col-xl-3 col-6 aos-init aos-animate"
+                  data-aos="fade"
+                  data-aos-delay="100"
+                >
+                  <div class="text-40 lg:text-30 lh-13 fw-600">4,958</div>
+                  <div class="text-14 lh-14 text-light-1 mt-5">
+                    Destinations
+                  </div>
+                </div>
+                <div
+                  class="col-xl-3 col-6 aos-init aos-animate"
+                  data-aos="fade"
+                  data-aos-delay="200"
+                >
+                  <div class="text-40 lg:text-30 lh-13 fw-600">2,869</div>
+                  <div class="text-14 lh-14 text-light-1 mt-5">
+                    Total Properties
+                  </div>
+                </div>
+                <div
+                  class="col-xl-3 col-6 aos-init aos-animate"
+                  data-aos="fade"
+                  data-aos-delay="300"
+                >
+                  <div class="text-40 lg:text-30 lh-13 fw-600">2M</div>
+                  <div class="text-14 lh-14 text-light-1 mt-5">
+                    Happy customers
+                  </div>
+                </div>
+                <div
+                  class="col-xl-3 col-6 aos-init aos-animate"
+                  data-aos="fade"
+                  data-aos-delay="400"
+                >
+                  <div class="text-40 lg:text-30 lh-13 fw-600">574,974</div>
+                  <div class="text-14 lh-14 text-light-1 mt-5">
+                    Our Volunteers
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="layout-pt-lg layout-pb-lg">
+          <div class="container">
+            <div class="row y-gap-20 justify-between items-end">
+              <div class="col-auto">
+                <div class="sectionTitle -md">
+                  <h2 class="sectionTitle__title">Our Team</h2>
+                  <p class="sectionTitle__text mt-5 sm:mt-0">
+                    Lorem ipsum dolor sit amet
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="pt-40 js-section-slider">
+              <div class="item_gap-x30 d-flex teams">
+                  <div class="item_gap-x30">
+                    <img class="rounded" src="./assets/ceo.jpeg" />
+                    <p class="team-title">Nizamudheen Cholakkan</p>
+                    <p class="team-info">Ceo &amp; Founder</p>
+                  </div>
+                  <div class="item_gap-x30">
+                      <img src="./assets/team1.jpeg" />
+                      <p class="team-title">Vaseem Cholakkan</p>
+                      <p class="team-info">Technical Assisstant</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section-bg layout-pt-lg layout-pb-lg">
+          <div class="section-bg__item -mx-20 bg-light-2"></div>
+          <div class="container">
+            <div class="row justify-center text-center">
+              <div class="col-auto">
+                <div class="sectionTitle -md">
+                  <h2 class="sectionTitle__title">Overheard from travelers</h2>
+                  <p class="sectionTitle__text mt-5 sm:mt-0">
+                    These popular destinations have a lot to offer
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="overflow-hidden pt-80 js-section-slider">
+              <div class="item_gap-x30">
+                <div class="slick-slider slick-initialized" dir="ltr">
+                  <button
+                    type="button"
+                    data-role="none"
+                    class="slick-arrow slick-prev"
+                    style="display: block"
+                  >
+                    Previous
+                  </button>
+                  <div class="slick-list">
+                    <div
+                      class="slick-track"
+                      style="
+                        width: 4862px;
+                        opacity: 1;
+                        transform: translate3d(-2652px, 0px, 0px);
+                      "
+                    >
+                      <div
+                        data-index="-3"
+                        tabindex="-1"
+                        class="slick-slide slick-cloned"
+                        aria-hidden="true"
+                        style="width: 442px"
+                      >
+                        <div>
+                          <div
+                            class="testimonials -type-1 bg-white rounded-4 pt-40 pb-30 px-40 aos-init aos-animate"
+                            data-aos="fade"
+                            data-aos-delay="200"
+                            tabindex="-1"
+                            style="width: 100%; display: inline-block"
+                          >
+                            <h4 class="text-16 fw-500 text-blue-1 mb-20"></h4>
+                            <p
+                              class="testimonials__text lh-18 fw-500 text-dark-1"
+                            >
+                              The place is in a great location in Gumbet. The
+                              area is safe and beautiful. The apartment was
+                              comfortable and the host was kind and responsive
+                              to our requests. Really a nice place.
+                            </p>
+                            <div class="pt-20 mt-28 border-top-light">
+                              <div class="row x-gap-20 y-gap-20 items-center">
+                                <div class="col-auto">
+                                  <img
+                                    src="./assets/2(2).png"
+                                    alt="image"
+                                    class="size-60"
+                                  />
+                                </div>
+                                <div class="col-auto">
+                                  <div class="text-15 fw-500 lh-14">
+                                    Annette Black
+                                  </div>
+                                  <div class="text-14 lh-14 text-light-1 mt-5">
+                                    UX / UI Designer
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-index="-2"
+                        tabindex="-1"
+                        class="slick-slide slick-cloned"
+                        aria-hidden="true"
+                        style="width: 442px"
+                      >
+                        <div>
+                          <div
+                            class="testimonials -type-1 bg-white rounded-4 pt-40 pb-30 px-40 aos-init aos-animate"
+                            data-aos="fade"
+                            data-aos-delay="300"
+                            tabindex="-1"
+                            style="width: 100%; display: inline-block"
+                          >
+                            <h4 class="text-16 fw-500 text-blue-1 mb-20"></h4>
+                            <p
+                              class="testimonials__text lh-18 fw-500 text-dark-1"
+                            >
+                              The place is in a great location in Gumbet. The
+                              area is safe and beautiful. The apartment was
+                              comfortable and the host was kind and responsive
+                              to our requests. Really a nice place.
+                            </p>
+                            <div class="pt-20 mt-28 border-top-light">
+                              <div class="row x-gap-20 y-gap-20 items-center">
+                                <div class="col-auto">
+                                  <img
+                                    src="./assets/3(1).png"
+                                    alt="image"
+                                    class="size-60"
+                                  />
+                                </div>
+                                <div class="col-auto">
+                                  <div class="text-15 fw-500 lh-14">
+                                    Annette Black
+                                  </div>
+                                  <div class="text-14 lh-14 text-light-1 mt-5">
+                                    UX / UI Designer
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-index="-1"
+                        tabindex="-1"
+                        class="slick-slide slick-cloned"
+                        aria-hidden="true"
+                        style="width: 442px"
+                      >
+                        <div>
+                          <div
+                            class="testimonials -type-1 bg-white rounded-4 pt-40 pb-30 px-40 aos-init aos-animate"
+                            data-aos="fade"
+                            data-aos-delay="400"
+                            tabindex="-1"
+                            style="width: 100%; display: inline-block"
+                          >
+                            <h4 class="text-16 fw-500 text-blue-1 mb-20"></h4>
+                            <p
+                              class="testimonials__text lh-18 fw-500 text-dark-1"
+                            >
+                              The place is in a great location in Gumbet. The
+                              area is safe and beautiful. The apartment was
+                              comfortable and the host was kind and responsive
+                              to our requests. Really a nice place.
+                            </p>
+                            <div class="pt-20 mt-28 border-top-light">
+                              <div class="row x-gap-20 y-gap-20 items-center">
+                                <div class="col-auto">
+                                  <img
+                                    src="./assets/1(2).png"
+                                    alt="image"
+                                    class="size-60"
+                                  />
+                                </div>
+                                <div class="col-auto">
+                                  <div class="text-15 fw-500 lh-14">
+                                    Annette Black
+                                  </div>
+                                  <div class="text-14 lh-14 text-light-1 mt-5">
+                                    UX / UI Designer
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-index="0"
+                        class="slick-slide"
+                        tabindex="-1"
+                        aria-hidden="true"
+                        style="outline: none; width: 442px"
+                      >
+                        <div>
+                          <div
+                            class="testimonials -type-1 bg-white rounded-4 pt-40 pb-30 px-40 aos-init aos-animate"
+                            data-aos="fade"
+                            data-aos-delay="100"
+                            tabindex="-1"
+                            style="width: 100%; display: inline-block"
+                          >
+                            <h4 class="text-16 fw-500 text-blue-1 mb-20"></h4>
+                            <p
+                              class="testimonials__text lh-18 fw-500 text-dark-1"
+                            >
+                              The place is in a great location in Gumbet. The
+                              area is safe and beautiful. The apartment was
+                              comfortable and the host was kind and responsive
+                              to our requests. Really a nice place.
+                            </p>
+                            <div class="pt-20 mt-28 border-top-light">
+                              <div class="row x-gap-20 y-gap-20 items-center">
+                                <div class="col-auto">
+                                  <img
+                                    src="./assets/1(2).png"
+                                    alt="image"
+                                    class="size-60"
+                                  />
+                                </div>
+                                <div class="col-auto">
+                                  <div class="text-15 fw-500 lh-14">
+                                    Annette Black
+                                  </div>
+                                  <div class="text-14 lh-14 text-light-1 mt-5">
+                                    UX / UI Designer
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-index="1"
+                        class="slick-slide"
+                        tabindex="-1"
+                        aria-hidden="true"
+                        style="outline: none; width: 442px"
+                      >
+                        <div>
+                          <div
+                            class="testimonials -type-1 bg-white rounded-4 pt-40 pb-30 px-40 aos-init aos-animate"
+                            data-aos="fade"
+                            data-aos-delay="200"
+                            tabindex="-1"
+                            style="width: 100%; display: inline-block"
+                          >
+                            <h4 class="text-16 fw-500 text-blue-1 mb-20"></h4>
+                            <p
+                              class="testimonials__text lh-18 fw-500 text-dark-1"
+                            >
+                              The place is in a great location in Gumbet. The
+                              area is safe and beautiful. The apartment was
+                              comfortable and the host was kind and responsive
+                              to our requests. Really a nice place.
+                            </p>
+                            <div class="pt-20 mt-28 border-top-light">
+                              <div class="row x-gap-20 y-gap-20 items-center">
+                                <div class="col-auto">
+                                  <img
+                                    src="./assets/2(2).png"
+                                    alt="image"
+                                    class="size-60"
+                                  />
+                                </div>
+                                <div class="col-auto">
+                                  <div class="text-15 fw-500 lh-14">
+                                    Annette Black
+                                  </div>
+                                  <div class="text-14 lh-14 text-light-1 mt-5">
+                                    UX / UI Designer
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-index="2"
+                        class="slick-slide"
+                        tabindex="-1"
+                        aria-hidden="true"
+                        style="outline: none; width: 442px"
+                      >
+                        <div>
+                          <div
+                            class="testimonials -type-1 bg-white rounded-4 pt-40 pb-30 px-40 aos-init aos-animate"
+                            data-aos="fade"
+                            data-aos-delay="300"
+                            tabindex="-1"
+                            style="width: 100%; display: inline-block"
+                          >
+                            <h4 class="text-16 fw-500 text-blue-1 mb-20"></h4>
+                            <p
+                              class="testimonials__text lh-18 fw-500 text-dark-1"
+                            >
+                              The place is in a great location in Gumbet. The
+                              area is safe and beautiful. The apartment was
+                              comfortable and the host was kind and responsive
+                              to our requests. Really a nice place.
+                            </p>
+                            <div class="pt-20 mt-28 border-top-light">
+                              <div class="row x-gap-20 y-gap-20 items-center">
+                                <div class="col-auto">
+                                  <img
+                                    src="./assets/3(1).png"
+                                    alt="image"
+                                    class="size-60"
+                                  />
+                                </div>
+                                <div class="col-auto">
+                                  <div class="text-15 fw-500 lh-14">
+                                    Annette Black
+                                  </div>
+                                  <div class="text-14 lh-14 text-light-1 mt-5">
+                                    UX / UI Designer
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-index="3"
+                        class="slick-slide slick-active slick-current"
+                        tabindex="-1"
+                        aria-hidden="false"
+                        style="outline: none; width: 442px"
+                      >
+                        <div>
+                          <div
+                            class="testimonials -type-1 bg-white rounded-4 pt-40 pb-30 px-40 aos-init aos-animate"
+                            data-aos="fade"
+                            data-aos-delay="400"
+                            tabindex="-1"
+                            style="width: 100%; display: inline-block"
+                          >
+                            <h4 class="text-16 fw-500 text-blue-1 mb-20"></h4>
+                            <p
+                              class="testimonials__text lh-18 fw-500 text-dark-1"
+                            >
+                              The place is in a great location in Gumbet. The
+                              area is safe and beautiful. The apartment was
+                              comfortable and the host was kind and responsive
+                              to our requests. Really a nice place.
+                            </p>
+                            <div class="pt-20 mt-28 border-top-light">
+                              <div class="row x-gap-20 y-gap-20 items-center">
+                                <div class="col-auto">
+                                  <img
+                                    src="./assets/1(2).png"
+                                    alt="image"
+                                    class="size-60"
+                                  />
+                                </div>
+                                <div class="col-auto">
+                                  <div class="text-15 fw-500 lh-14">
+                                    Annette Black
+                                  </div>
+                                  <div class="text-14 lh-14 text-light-1 mt-5">
+                                    UX / UI Designer
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-index="4"
+                        tabindex="-1"
+                        class="slick-slide slick-active slick-cloned"
+                        aria-hidden="false"
+                        style="width: 442px"
+                      >
+                        <div>
+                          <div
+                            class="testimonials -type-1 bg-white rounded-4 pt-40 pb-30 px-40 aos-init aos-animate"
+                            data-aos="fade"
+                            data-aos-delay="100"
+                            tabindex="-1"
+                            style="width: 100%; display: inline-block"
+                          >
+                            <h4 class="text-16 fw-500 text-blue-1 mb-20"></h4>
+                            <p
+                              class="testimonials__text lh-18 fw-500 text-dark-1"
+                            >
+                              The place is in a great location in Gumbet. The
+                              area is safe and beautiful. The apartment was
+                              comfortable and the host was kind and responsive
+                              to our requests. Really a nice place.
+                            </p>
+                            <div class="pt-20 mt-28 border-top-light">
+                              <div class="row x-gap-20 y-gap-20 items-center">
+                                <div class="col-auto">
+                                  <img
+                                    src="./assets/1(2).png"
+                                    alt="image"
+                                    class="size-60"
+                                  />
+                                </div>
+                                <div class="col-auto">
+                                  <div class="text-15 fw-500 lh-14">
+                                    Annette Black
+                                  </div>
+                                  <div class="text-14 lh-14 text-light-1 mt-5">
+                                    UX / UI Designer
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-index="5"
+                        tabindex="-1"
+                        class="slick-slide slick-active slick-cloned"
+                        aria-hidden="false"
+                        style="width: 442px"
+                      >
+                        <div>
+                          <div
+                            class="testimonials -type-1 bg-white rounded-4 pt-40 pb-30 px-40 aos-init aos-animate"
+                            data-aos="fade"
+                            data-aos-delay="200"
+                            tabindex="-1"
+                            style="width: 100%; display: inline-block"
+                          >
+                            <h4 class="text-16 fw-500 text-blue-1 mb-20"></h4>
+                            <p
+                              class="testimonials__text lh-18 fw-500 text-dark-1"
+                            >
+                              The place is in a great location in Gumbet. The
+                              area is safe and beautiful. The apartment was
+                              comfortable and the host was kind and responsive
+                              to our requests. Really a nice place.
+                            </p>
+                            <div class="pt-20 mt-28 border-top-light">
+                              <div class="row x-gap-20 y-gap-20 items-center">
+                                <div class="col-auto">
+                                  <img
+                                    src="./assets/2(2).png"
+                                    alt="image"
+                                    class="size-60"
+                                  />
+                                </div>
+                                <div class="col-auto">
+                                  <div class="text-15 fw-500 lh-14">
+                                    Annette Black
+                                  </div>
+                                  <div class="text-14 lh-14 text-light-1 mt-5">
+                                    UX / UI Designer
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-index="6"
+                        tabindex="-1"
+                        class="slick-slide slick-cloned"
+                        aria-hidden="true"
+                        style="width: 442px"
+                      >
+                        <div>
+                          <div
+                            class="testimonials -type-1 bg-white rounded-4 pt-40 pb-30 px-40 aos-init aos-animate"
+                            data-aos="fade"
+                            data-aos-delay="300"
+                            tabindex="-1"
+                            style="width: 100%; display: inline-block"
+                          >
+                            <h4 class="text-16 fw-500 text-blue-1 mb-20"></h4>
+                            <p
+                              class="testimonials__text lh-18 fw-500 text-dark-1"
+                            >
+                              The place is in a great location in Gumbet. The
+                              area is safe and beautiful. The apartment was
+                              comfortable and the host was kind and responsive
+                              to our requests. Really a nice place.
+                            </p>
+                            <div class="pt-20 mt-28 border-top-light">
+                              <div class="row x-gap-20 y-gap-20 items-center">
+                                <div class="col-auto">
+                                  <img
+                                    src="./assets/3(1).png"
+                                    alt="image"
+                                    class="size-60"
+                                  />
+                                </div>
+                                <div class="col-auto">
+                                  <div class="text-15 fw-500 lh-14">
+                                    Annette Black
+                                  </div>
+                                  <div class="text-14 lh-14 text-light-1 mt-5">
+                                    UX / UI Designer
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-index="7"
+                        tabindex="-1"
+                        class="slick-slide slick-cloned"
+                        aria-hidden="true"
+                        style="width: 442px"
+                      >
+                        <div>
+                          <div
+                            class="testimonials -type-1 bg-white rounded-4 pt-40 pb-30 px-40 aos-init aos-animate"
+                            data-aos="fade"
+                            data-aos-delay="400"
+                            tabindex="-1"
+                            style="width: 100%; display: inline-block"
+                          >
+                            <h4 class="text-16 fw-500 text-blue-1 mb-20"></h4>
+                            <p
+                              class="testimonials__text lh-18 fw-500 text-dark-1"
+                            >
+                              The place is in a great location in Gumbet. The
+                              area is safe and beautiful. The apartment was
+                              comfortable and the host was kind and responsive
+                              to our requests. Really a nice place.
+                            </p>
+                            <div class="pt-20 mt-28 border-top-light">
+                              <div class="row x-gap-20 y-gap-20 items-center">
+                                <div class="col-auto">
+                                  <img
+                                    src="./assets/1(2).png"
+                                    alt="image"
+                                    class="size-60"
+                                  />
+                                </div>
+                                <div class="col-auto">
+                                  <div class="text-15 fw-500 lh-14">
+                                    Annette Black
+                                  </div>
+                                  <div class="text-14 lh-14 text-light-1 mt-5">
+                                    UX / UI Designer
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    data-role="none"
+                    class="slick-arrow slick-next"
+                    style="display: block"
+                  >
+                    Next
+                  </button>
+                  <ul class="slick-dots" style="display: block">
+                    <li class=""><button>1</button></li>
+                    <li class=""><button>2</button></li>
+                    <li class=""><button>3</button></li>
+                    <li class="slick-active"><button>4</button></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row y-gap-30 items-center pt-40 sm:pt-20">
+              <div class="col-xl-4">
+                <div class="row y-gap-30 text-dark-1">
+                  <div class="col-sm-5 col-6">
+                    <div class="text-30 lh-15 fw-600">13m+</div>
+                    <div class="lh-15">Happy People</div>
+                  </div>
+                  <div class="col-sm-5 col-6">
+                    <div class="text-30 lh-15 fw-600">4.88</div>
+                    <div class="lh-15">Overall rating</div>
+                    <div class="d-flex x-gap-5 items-center pt-10">
+                      <div class="icon-star text-dark-1 text-10"></div>
+                      <div class="icon-star text-dark-1 text-10"></div>
+                      <div class="icon-star text-dark-1 text-10"></div>
+                      <div class="icon-star text-dark-1 text-10"></div>
+                      <div class="icon-star text-dark-1 text-10"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-8">
+                <div class="row y-gap-30 justify-between items-center">
+                  <div class="col-md-auto col-sm-6">
+                    <div class="d-flex justify-center">
+                      <img
+                        src="./assets/1(3).svg"
+                        alt="image"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-auto col-sm-6">
+                    <div class="d-flex justify-center">
+                      <img
+                        src="./assets/2(3).svg"
+                        alt="image"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-auto col-sm-6">
+                    <div class="d-flex justify-center">
+                      <img
+                        src="./assets/3(2).svg"
+                        alt="image"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-auto col-sm-6">
+                    <div class="d-flex justify-center">
+                      <img
+                        src="./assets/4.svg"
+                        alt="image"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </section>
+        <!-- <section class="layout-pt-md layout-pb-md bg-dark-2">
+          <div class="container">
+            <div class="row y-gap-30 justify-between items-center">
+              <div class="col-auto">
+                <div class="row y-gap-20 flex-wrap items-center">
+                  <div class="col-auto">
+                    <div
+                      class="icon-newsletter text-60 sm:text-40 text-white"
+                    ></div>
+                  </div>
+                  <div class="col-auto">
+                    <h4 class="text-26 text-white fw-600">
+                      Your Travel Journey Starts Here
+                    </h4>
+                    <div class="text-white">
+                      Sign up and we`'ll send the best deals to you
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="single-field -w-410 d-flex x-gap-10 y-gap-20">
+                  <div>
+                    <input
+                      class="bg-white h-60"
+                      type="text"
+                      placeholder="Your Email"
+                    />
+                  </div>
+                  <div>
+                    <button class="button -md h-60 bg-blue-1 text-white">
+                      Subscribe
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+        <footer class="footer -type-2 bg-blue-1 text-white footer-blue_custom">
+          <div class="container">
+            <div class="pt-60 pb-60">
+              <div class="row y-gap-40 justify-between xl:justify-start">
+                <div class="col-xl-4 col-lg-6">
+                  <img
+                    src="./assets/logo-light.svg"
+                    alt="image"
+                  />
+                  <!-- <div class="row y-gap-30 justify-between pt-30">
+                    <div class="col-sm-6">
+                      <div class="text-14">Toll Free Customer Care</div>
+                      <a
+                        href="tel:+(1) 123 456 7890"
+                        class="text-18 fw-500 mt-5"
+                        >+(1) 123 456 7890</a
+                      >
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="text-14">Need live support?</div>
+                      <a href="mailto:xyz@abc.com" class="text-18 fw-500 mt-5"
+                        >hi@CM Travel Point.com</a
+                      >
+                    </div>
+                  </div> -->
+                  <!-- <div class="row x-gap-20 y-gap-15 pt-60">
+                    <div class="col-12">
+                      <h5 class="text-16 fw-500">Your all-in-one travel app</h5>
+                    </div>
+                    <div class="col-auto col-lg-6">
+                      <div
+                        class="d-flex items-center px-20 py-10 rounded-4 bg-white-10"
+                      >
+                        <i class="icon-apple text-24"></i
+                        ><a
+                          href="https://www.apple.com/app-store/"
+                          class="ml-20"
+                          ><div class="text-14 lh-14">Download on the</div>
+                          <div class="text-15 lh-14 fw-500">Apple Store</div></a
+                        >
+                      </div>
+                    </div>
+                    <div class="col-auto col-lg-6">
+                      <div
+                        class="d-flex items-center px-20 py-10 rounded-4 bg-white-10"
+                      >
+                        <i class="icon-play-market text-24"></i
+                        ><a
+                          href="https://play.google.com/store/apps/?hl=en&amp;gl=US"
+                          class="ml-20"
+                          ><div class="text-14 lh-14">Get in on</div>
+                          <div class="text-15 lh-14 fw-500">Google Play</div></a
+                        >
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="mt-60">
+                    <h5 class="text-16 fw-500 mb-10">
+                      Follow us on social media
+                    </h5>
+                    <div class="d-flex x-gap-20 items-center">
+                      <a
+                        href="https://facebok.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="icon-facebook text-14"></i></a
+                      ><a
+                        href="https://twitter.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="icon-twitter text-14"></i></a
+                      ><a
+                        href="https://instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="icon-instagram text-14"></i></a
+                      ><a
+                        href="https://linkedin.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="icon-linkedin text-14"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="row y-gap-30">
+                    <!-- <div class="col-12">
+                      <h5 class="text-16 fw-500 mb-15">
+                        Get Updates &amp; More
+                      </h5>
+                      <div
+                        class="single-field relative d-flex justify-end items-center pb-30"
+                      >
+                        <input
+                          class="bg-white rounded-8"
+                          type="email"
+                          placeholder="Your Email"
+                          required=""
+                        /><button
+                          type="submit"
+                          class="absolute px-20 h-full text-15 fw-500 underline text-dark-1"
+                        >
+                          Subscribe
+                        </button>
+                      </div>
+                    </div> -->
+                    <div class="col-lg-4 col-sm-6">
+                      <h5 class="text-16 fw-500 mb-30">Company</h5>
+                      <div class="d-flex y-gap-10 flex-column">
+                        <a href="/"
+                          >About Us</a
+                         >
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                      <h5 class="text-16 fw-500 mb-30">Support</h5>
+                      <div class="d-flex y-gap-10 flex-column">
+                        <a href="/"
+                          >Contact</a
+                        ><a href="/"
+                          >Legal Notice</a
+                        ><a href="/"
+                          >Privacy Policy</a
+                        ><a href="/"
+                          >Terms and Conditions</a
+                        ><a href="/"
+                          >Sitemap</a
+                        >
+                      </div>
+                    </div>
+                    <!-- <div class="col-lg-4 col-sm-6">
+                      <h5 class="text-16 fw-500 mb-30">Other Services</h5>
+                      <div class="d-flex y-gap-10 flex-column">
+                        <a href="/"
+                          >Car hire</a
+                        ><a href="/"
+                          >Activity Finder</a
+                        ><a href="/"
+                          >Tour List</a
+                        ><a href="/"
+                          >Flight finder</a
+                        ><a href="/"
+                          >Cruise Ticket</a
+                        ><a href="/"
+                          >Holiday Rental</a
+                        ><a href="/"
+                          >Travel Agents</a
+                        >
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="py-20 border-top-white-15">
+              <div class="row justify-between items-center y-gap-10">
+                <div class="col-auto">
+                  <div class="row x-gap-30 y-gap-10">
+                    <div class="col-auto">
+                      <div class="d-flex items-center">
+                        © 2024 by<a
+                          href="https://themeforest.net/user/ib-themes"
+                          class="mx-2"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          >CM Travel Point</a
+                        >All rights reserved.
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <div class="d-flex x-gap-15">
+                        <a href="/"
+                          >Privacy</a
+                        ><a
+                          href="/"
+                          >Terms</a
+                        ><a
+                          href="/"
+                          >Site Map</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="row y-gap-10 items-center">
+                    <div class="col-auto">
+                      <div class="d-flex items-center">
+                        <button
+                          class="d-flex items-center text-14 fw-500 text-white mr-10"
+                        >
+                          <i class="icon-globe text-16 mr-10"></i
+                          ><span class="underline">English (IN)</span></button
+                        ><button
+                          class="d-flex items-center text-14 fw-500 text-white mr-10"
+                        >
+                          <i class="icon-inr text-16 mr-10"></i
+                          ><span class="underline">INR</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <div class="scroll-to-top scroll-to-target">
+          <span class="icon icon-arrow-top-right"></span>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

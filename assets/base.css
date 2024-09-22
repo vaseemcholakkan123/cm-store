@@ -1,0 +1,6 @@
+.masthead-new {
+    width: 100%;
+}
+.masthead-new img {
+    object-fit: contain;
+}
