@@ -14,7 +14,7 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Home-5 || CM Travel Point - Travel &amp; Tour ReactJs Template
+      CM Travel Point
     </title>
     <script
       type="module"
@@ -489,11 +489,38 @@
     <style data-emotion="css" data-s=""></style>
     <meta
       name="description"
-      content="CM Travel Point - Travel &amp; Tour ReactJs Template"
+      content="CM Travel Point"
       data-rh="true"
     />
 
     <style>
+       .mobile-show{
+        display: none !important;
+      }
+      
+      .mobile-hidden{
+        display: block !important;
+      }
+
+      .mobile-show-flex{
+              display: none !important;
+            }
+
+      @media (max-width: 576px) {
+            .mobile-show{
+              display: block !important;
+            }
+            .mobile-hidden{
+              display: none !important;
+            }
+            .mobile-width-full{
+              width: 100% !important;
+            }
+            .mobile-show-flex{
+              display: flex !important;
+              justify-content: center;
+            }
+      }
       .masthead-new {
         margin-top: 12px !important;
         width: 100% !important;
@@ -513,11 +540,19 @@
               <div class="col-auto mobile-col">
                 <div class="d-flex items-center">
                   <div class="mr-20 d-flex items-center">
+
                     <div class="mr-15 d-none md:d-flex">
                       <a
-                        class="icon-user text-inherit text-22"
+                        class="text-inherit text-16"
+                        href="./about-us.html"
+                      >About</a>
+                    </div>
+                    
+                    <div class="mr-15 d-none md:d-flex">
+                      <a
+                        class="text-inherit text-16"
                         href="./contact-us.html"
-                      ></a>
+                      >Contact</a>
                     </div>
 
                     <div
@@ -2970,7 +3005,7 @@
                   </p>
                 </div>
               </div>
-              <div class="col-auto">
+              <div class="col-auto mobile-hidden">
                 <div class="d-flex x-gap-15 items-center">
                   <div class="col-auto prev-slide">
                     <button
@@ -3547,6 +3582,30 @@
                       >
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto mobile-show-flex" style="padding-top: 1rem;">
+              <div class="d-flex x-gap-15 items-center">
+                <div class="col-auto prev-slide">
+                  <button
+                    class="features-prev d-flex items-center text-24 arrow-left-hover js-populars-tour-prev swiper-button-disabled"
+                    disabled=""
+                  >
+                    <i class="icon icon-arrow-left"></i>
+                  </button>
+                </div>
+                <div class="col-auto">
+                  <div
+                    class="features-swiper-paginator-2 pagination -dots text-border js-tour-pag_active swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"
+                  ></div>
+                </div>
+                <div class="col-auto next-slide">
+                  <button
+                    class="features-next d-flex items-center text-24 arrow-right-hover js-populars-tour-next"
+                  >
+                    <i class="icon icon-arrow-right"></i>
+                  </button>
                 </div>
               </div>
             </div>

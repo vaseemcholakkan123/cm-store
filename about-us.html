@@ -22,7 +22,7 @@
       href="https://CM Travel Point-reactjs.ibthemespro.com/favicon.ico"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About || CM Travel Point - Travel &amp; Tour ReactJs Template</title>
+    <title>About || CM Travel Point</title>
     <script
       type="module"
       crossorigin=""
@@ -35,6 +35,28 @@
 
     <link rel="stylesheet" href="./assets/styles/style.css" />
     <style type="text/css">
+
+      .mobile-show{
+        display: none !important;
+      }
+      
+      .mobile-hidden{
+        display: block !important;
+      }
+
+      @media (max-width: 576px) {
+            .mobile-show{
+              display: block !important;
+            }
+            .mobile-hidden{
+              display: none !important;
+            }
+            .mobile-width-full{
+              width: 100% !important;
+            }
+      }
+
+
       .teams {
         gap: 1rem;
       }
@@ -497,7 +519,7 @@
     <style data-emotion="css" data-s=""></style>
     <meta
       name="description"
-      content="CM Travel Point - Travel &amp; Tour ReactJs Template"
+      content="CM Travel Point"
       data-rh="true"
     />
   </head>
@@ -512,11 +534,18 @@
               <div class="col-auto mobile-col">
                 <div class="d-flex items-center">
                   <div class="mr-20 d-flex items-center">
-                    <div class="mr-15 d-none md:d-flex">
+                    <!-- <div class="mr-15 d-none md:d-flex">
                       <a
                         class="icon-user text-inherit text-22"
                         href="./contact-us.html"
                       ></a>
+                    </div> -->
+                    
+                    <div class="mr-15 d-none md:d-flex">
+                      <a
+                        class="text-inherit text-16"
+                        href="./contact-us.html"
+                      >Contact</a>
                     </div>
                     <!-- <button
                       class="d-flex items-center icon-menu text-dark-1 text-20"
@@ -2002,7 +2031,7 @@
                             <a href="./index.html">Home</a>
                           </li>
                           <li class="current -is-active menu-item-has-children">
-                            <a href="./about-us">About</a>
+                            <a href="./about-us.html">About</a>
                           </li>
                           <!--
                           <li class="">
@@ -2182,14 +2211,20 @@
         </section>
         <section class="layout-pt-md layout-pb-lg">
           <div class="container">
-            <div class="pt-40 js-section-slider">
-              <div class="item_gap-x30 d-flex teams">
-                <div class="item_gap-x30">
+            <div class="pt-40 js-section-slider ">
+              <div class="item_gap-x30 d-flex teams ">
+                <div class="item_gap-x30 mobile-width-full">
                   <h2 class="text-30 fw-600">Our Vision</h2>
                   <p class="mt-5">
                     With a commitment to excellence, we aim to connect people to
                     the world, one trip at a time.
                   </p>
+                  <div class="mobile-show" style="padding-top: 1.5rem;">
+                    <img class="rounded" src="./assets/ceo.jpeg" style="width: 100%; height: 100%;" />
+                    <p class="team-title">Nizamudheen Cholakkan</p>
+                    <p class="team-info">Ceo &amp; Founder</p>
+                  </div>
+
                   <p class="text-dark-1 mt-60 lg:mt-40 md:mt-20">
                     At CM Travel Point, our vision is to make travel accessible,
                     affordable, and enjoyable for everyone. We strive to become
@@ -2202,7 +2237,7 @@
                 </div>
 
                 <div
-                  class="item_gap-x30"
+                  class="item_gap-x30 mobile-hidden"
                   style="
                     position: relative;
                     display: flex;
@@ -2211,7 +2246,7 @@
                   "
                 >
                   <div>
-                    <div>
+                    <div class="mobile-hidden">
                       <img class="rounded" src="./assets/ceo.jpeg" />
                       <p class="team-title">Nizamudheen Cholakkan</p>
                       <p class="team-info">Ceo &amp; Founder</p>

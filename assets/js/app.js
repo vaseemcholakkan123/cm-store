@@ -1,5 +1,8 @@
+let notRun = true
 document.addEventListener("DOMContentLoaded", () => {
   // Check if AOS is defined before initializing
+
+
   if (typeof AOS !== "undefined") {
     AOS.init();
   } else {
@@ -21,6 +24,21 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       console.warn("Header element not found.");
     }
+
+
+    const featuresSwiper = document.querySelector(".features-swiper")
+    const featuresSlides = featuresSwiper.querySelectorAll(".swiper-slide")
+    const paginator = document.querySelector(".features-swiper-paginator-2")
+
+    
+    notRun && featuresSlides.forEach((slide,idx) => {
+      notRun = false;
+      const span = document.createElement("span"); // Create a new span for each slide
+      span.classList.add("swiper-pagination-bullet");
+      if(idx == 0) span.classList.add("swiper-pagination-bullet-active")
+      paginator.appendChild(span);
+    })
+
   };
 
   const scrollToTopBtn = document.querySelector(".scroll-to-top");
@@ -95,7 +113,19 @@ document.addEventListener("DOMContentLoaded", () => {
       ".features-swiper",
       getSwiperOptions("features", 5)
     );
+
+    featuresSwiper.on('slideChange', function () {
+      const bullets = document.querySelectorAll('.features-swiper-paginator-2 span');
+      bullets.forEach((bullet, index) => {
+        bullet.classList.toggle('swiper-pagination-bullet-active', index === featuresSwiper.activeIndex);
+      });
+    });
+
+    
+
   } else {
     console.warn("Swiper is not defined.");
   }
 });
+
+
