@@ -1,0 +1,9 @@
+.scroll-to-top {
+  display: none;
+}
+
+.team-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

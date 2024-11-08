@@ -1,61 +1,101 @@
-document.addEventListener('DOMContentLoaded', function () {
-  AOS.init();
+document.addEventListener("DOMContentLoaded", () => {
+  // Check if AOS is defined before initializing
+  if (typeof AOS !== "undefined") {
+    AOS.init();
+  } else {
+    console.warn("AOS is not defined.");
+  }
 
-  window.onscroll = function() {
-    addStickyClass();
-};
+  const addStickyClass = () => {
+    const header = document.querySelector("header");
 
-function addStickyClass() {
-    var header = document.querySelector("header"); // Change "header" to match your header element
-    var sticky = header.offsetTop;
+    if (header) {
+      // Check if header exists
+      const sticky = header.offsetTop;
 
-    if (window.scrollY > sticky) {
+      if (window.scrollY > sticky) {
         header.classList.add("-header-5-sticky");
-    } else {
+      } else {
         header.classList.remove("-header-5-sticky");
-    }
-}
-
-
-
-  getSwiperOptions = (type, slides=4) => {
-    return {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      slidesPerGroup: 1,
-      loop: false,
-      loopFillGroupWithBlank: true,
-      pagination: {
-        el: `.${type}-swiper-paginator`,
-        clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">'  + '</span>';
-        }
-      },
-      navigation: {
-        nextEl: `.${type}-next`,
-        prevEl: `.${type}-prev`,
-      },
-      breakpoints: {
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: slides-1,
-          spaceBetween: 40,
-          slidesPerGroup: 2,
-        },
-        1024: {
-          slidesPerView: slides,
-          spaceBetween: 50,
-          slidesPerGroup: 3,
-        },
       }
-    };
+    } else {
+      console.warn("Header element not found.");
+    }
   };
 
-  let tourSwiper = new Swiper(".tour-swiper", getSwiperOptions("tours"));
-  let featuresSwiper = new Swiper(".features-swiper", getSwiperOptions("features", 5));
-    
+  const scrollToTopBtn = document.querySelector(".scroll-to-top");
+
+  // Show or hide the button based on scroll position
+  window.onscroll = () => {
+    addStickyClass();
+    if (scrollToTopBtn) {
+      // Check if scrollToTopBtn exists
+      if (
+        document.body.scrollTop > 200 ||
+        document.documentElement.scrollTop > 200
+      ) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    } else {
+      console.warn("Scroll to top button not found.");
+    }
+  };
+
+  // Scroll to top when the button is clicked
+  if (scrollToTopBtn) {
+    // Check if scrollToTopBtn exists
+    scrollToTopBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  }
+
+  // Check if Swiper is defined before using it
+  if (typeof Swiper !== "undefined") {
+    const getSwiperOptions = (type, slides = 4) => {
+      return {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        slidesPerGroup: 1,
+        loop: false,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: `.${type}-swiper-paginator`,
+          clickable: true,
+          renderBullet: (index, className) => {
+            return `<span class="${className}"></span>`;
+          },
+        },
+        navigation: {
+          nextEl: `.${type}-next`,
+          prevEl: `.${type}-prev`,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: slides - 1,
+            spaceBetween: 30,
+            slidesPerGroup: 2,
+          },
+          1024: {
+            slidesPerView: slides,
+            spaceBetween: 30,
+            slidesPerGroup: 3,
+          },
+        },
+      };
+    };
+
+    const tourSwiper = new Swiper(".tour-swiper", getSwiperOptions("tours"));
+    const featuresSwiper = new Swiper(
+      ".features-swiper",
+      getSwiperOptions("features", 5)
+    );
+  } else {
+    console.warn("Swiper is not defined.");
+  }
 });
