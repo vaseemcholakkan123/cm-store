@@ -356,6 +356,14 @@
       .rmdp-full-year {
         grid-template-columns: 1fr 1fr 1fr;
       }
+      @media (max-width: 576px) {
+        .mobile-padding{
+          padding-left: .5rem !important;
+        }
+        .mobile-low-width{
+        width: 110px !important;
+      }
+    }
       @media (max-height: 450px), (max-width: 450px) {
         .rmdp-day,
         .rmdp-week-day {
@@ -507,6 +515,7 @@
                     </div> -->
                     <div class="mr-15 d-none md:d-flex">
                       <a
+                        style="font-weight: bold;"
                         class="text-inherit text-16"
                         href="./about-us.html"
                       >About</a>
@@ -1986,9 +1995,11 @@
                     </div>
                   </div>
                   <a
-                    class="header-logo mr-20"
+                    class="header-logo mr-20 mobile-low-width"
+                    
                     href="./index.html"
                     ><img
+                      class="mobile-low-width"
                       src="./assets/logo-red.png"
                       alt="logo icon" /><img
                       src="./assets/logo-red.png"
@@ -2329,8 +2340,9 @@
           <div class="container">
             <div class="pt-60 pb-60">
               <div class="row y-gap-40 justify-between xl:justify-start">
-                <div class="col-xl-4 col-lg-6">
+                <div class="col-xl-4 col-lg-6 mobile-padding">
                   <img
+                    class="mobile-low-width"
                     width="160"
                     src="./assets/logo-cm-white.png"
                     alt="image"

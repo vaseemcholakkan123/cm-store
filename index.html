@@ -11,7 +11,7 @@
     />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link href="./assets/fonts3.css" rel="stylesheet" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="./assets/logo-red.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
       CM Travel Point
@@ -494,6 +494,7 @@
     />
 
     <style>
+
        .mobile-show{
         display: none !important;
       }
@@ -507,6 +508,12 @@
             }
 
       @media (max-width: 576px) {
+        .mobile-padding{
+          padding-left: .5rem !important;
+        }
+        .mobile-low-width{
+        width: 110px !important;
+      }
             .mobile-show{
               display: block !important;
             }
@@ -543,13 +550,15 @@
 
                     <div class="mr-15 d-none md:d-flex">
                       <a
-                        class="text-inherit text-16"
+                        class="text-inherit text-16" 
+                        style="font-weight: bold;"
                         href="./about-us.html"
                       >About</a>
                     </div>
                     
                     <div class="mr-15 d-none md:d-flex">
                       <a
+                        style="font-weight: bold;"
                         class="text-inherit text-16"
                         href="./contact-us.html"
                       >Contact</a>
@@ -2021,7 +2030,9 @@
                     </div>
                   </div>
                   <a class="header-logo mr-20" href="./index.html"
-                    ><img src="./assets/logo-red.png" alt="logo icon" /><img
+                    ><img
+                      class="mobile-low-width"
+                      src="./assets/logo-red.png" alt="logo icon" /><img
                       src="./assets/logo-red.png"
                       alt="logo icon"
                   /></a>
@@ -3679,7 +3690,7 @@
                     <div class="col-auto">
                       <div class="text-18 fw-500">Saudi Arabia</div>
                       <div class="text-14 lh-14 text-light-1 mt-5">
-                        4,090 properties
+                        30+ airlines
                       </div>
                     </div>
                   </div></a
@@ -3704,7 +3715,7 @@
                     <div class="col-auto">
                       <div class="text-18 fw-500">Malaysia</div>
                       <div class="text-14 lh-14 text-light-1 mt-5">
-                        4,090 properties
+                        10+ airlines
                       </div>
                     </div>
                   </div></a
@@ -3729,7 +3740,7 @@
                     <div class="col-auto">
                       <div class="text-18 fw-500">Thailand</div>
                       <div class="text-14 lh-14 text-light-1 mt-5">
-                        4,090 properties
+                        10+ airlines
                       </div>
                     </div>
                   </div></a
@@ -3754,7 +3765,7 @@
                     <div class="col-auto">
                       <div class="text-18 fw-500">Singapore</div>
                       <div class="text-14 lh-14 text-light-1 mt-5">
-                        4,090 properties
+                        5+ airlines
                       </div>
                     </div>
                   </div></a
@@ -3779,7 +3790,7 @@
                     <div class="col-auto">
                       <div class="text-18 fw-500">Philippines</div>
                       <div class="text-14 lh-14 text-light-1 mt-5">
-                        4,090 properties
+                        15+ airlines
                       </div>
                     </div>
                   </div></a
@@ -3804,7 +3815,7 @@
                     <div class="col-auto">
                       <div class="text-18 fw-500">Maldives</div>
                       <div class="text-14 lh-14 text-light-1 mt-5">
-                        4,090 properties
+                        20+ airlines
                       </div>
                     </div>
                   </div></a
@@ -3829,7 +3840,7 @@
                     <div class="col-auto">
                       <div class="text-18 fw-500">Nepal</div>
                       <div class="text-14 lh-14 text-light-1 mt-5">
-                        4,090 properties
+                        15+ airlines
                       </div>
                     </div>
                   </div></a
@@ -5099,8 +5110,9 @@
           <div class="container">
             <div class="pt-60 pb-60">
               <div class="row y-gap-40 justify-between xl:justify-start">
-                <div class="col-xl-4 col-lg-6">
+                <div class="col-xl-4 col-lg-6 mobile-padding">
                   <img
+                    class="mobile-low-width"
                     width="160"
                     src="./assets/logo-cm-white.png"
                     alt="image"
